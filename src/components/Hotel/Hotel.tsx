@@ -80,12 +80,6 @@ const Hotel = ({
                 adults={adults}
               />
             ))}
-
-          {rooms.rooms.every(
-            (r: RoomType) =>
-              adults > r.occupancy.maxAdults ||
-              children > r.occupancy.maxChildren
-          ) && <p className="hotel__norooms">No rooms.</p>}
         </div>
       </article>
     </>

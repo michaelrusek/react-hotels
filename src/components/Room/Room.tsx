@@ -14,7 +14,7 @@ const Room = ({
 
   return (
     <>
-      {adults <= roomOccupancy.maxAdults &&
+      {adults >= roomOccupancy.maxAdults &&
         children <= roomOccupancy.maxChildren && (
           <article className="room">
             <div className="room__details">
