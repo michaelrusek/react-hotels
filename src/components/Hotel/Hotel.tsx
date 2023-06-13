@@ -35,7 +35,7 @@ const Hotel = ({
       .catch(function (error) {
         setError(true);
       });
-  }, []);
+  }, [hotel.id]);
 
   return (
     <>

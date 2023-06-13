@@ -24,7 +24,6 @@ function App() {
       .get("https://obmng.dbm.guestline.net/api/hotels?collection-id=OBMNG")
       .then(function (response) {
         setHotels(response.data);
-        console.log(response.data);
         setLoading(false);
       })
       .catch(function (error) {
@@ -43,7 +42,7 @@ function App() {
       (r: HotelType) => r.starRating >= rating
     );
     setHotelsFiltered(newHotels);
-  }, [rating]);
+  }, [rating, hotels]);
 
   return (
     <div className="App">
