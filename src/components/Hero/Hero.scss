@@ -1,0 +1,70 @@
+.hero {
+  height: 300px;
+  background: url(../../images/bedroom.jpeg) no-repeat center;
+  background-size: cover;
+  border-radius: 20px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    inset: 0;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      357deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(199, 120, 221, 1) 70%,
+      rgba(40, 44, 51, 1) 100%
+    );
+    animation: show-bg 1s ease-in-out;
+    opacity: 0.5;
+  }
+
+  &__title {
+    color: #fff;
+    font-size: 30px;
+    border: 2px dotted #fff;
+    padding: 10px 30px;
+    border-radius: 20px;
+    position: relative;
+    z-index: 1;
+    animation: show-title;
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier();
+    opacity: 1;
+    text-align: center;
+
+    @media (max-width: 640px) {
+      font-size: 20px;
+    }
+  }
+}
+
+@keyframes show-bg {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes show-title {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

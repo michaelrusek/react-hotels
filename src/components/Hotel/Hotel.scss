@@ -1,0 +1,45 @@
+.hotel {
+  padding: 20px 20px 0 20px;
+  border-radius: 20px;
+  transition: all 0.5s ease;
+  background: #282c33;
+
+  margin-bottom: 20px;
+
+  &__header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    color: #e06b74;
+    font-size: 30px;
+    font-weight: normal;
+    margin-top: 0;
+  }
+
+  &__images {
+    max-width: 200px;
+    overflow: hidden;
+  }
+
+  &__image {
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  &__details {
+    flex-grow: 1;
+  }
+
+  &__rooms {
+    margin-top: 30px;
+  }
+
+  &__norooms {
+    padding-bottom: 20px;
+  }
+}

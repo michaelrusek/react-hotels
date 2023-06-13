@@ -1,0 +1,54 @@
+.filter {
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  gap: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background: #282c33;
+  margin: 0 20px;
+  transform: translateY(-50%);
+  flex-wrap: wrap;
+}
+
+.input-number {
+  font-size: 13px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  &__controls {
+    display: flex;
+    gap: 4px;
+  }
+
+  &__text {
+    border: none;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    box-sizing: border-box;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    -moz-appearance: textfield;
+  }
+
+  &__button {
+    border: none;
+    color: #fff;
+    background: #c778dd;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
