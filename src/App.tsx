@@ -10,8 +10,8 @@ import HotelType from "./types/HotelType";
 
 function App() {
   const [rating, setRating] = useState<number>(1);
-  const [adults, setAdults] = useState<number>(1);
-  const [children, setChildren] = useState<number>(1);
+  const [adults, setAdults] = useState<number>(2);
+  const [children, setChildren] = useState<number>(2);
 
   const [hotels, setHotels] = useState([]);
   const [hotelsFiltered, setHotelsFiltered] = useState(hotels);
