@@ -23,19 +23,35 @@ const Hotel = ({
     return photoId;
   };
 
-  const [rooms, setRooms] = useState({ rooms: [] });
+  const [rooms, setRooms] = useState([]);
+  const [roomsFiltered, setRoomsFiltered] = useState([]);
   const [error, setError] = useState<boolean>(false);
+  const [noRooms, setNoRooms] = useState<boolean>(false);
 
   useEffect(() => {
     axios
       .get(`https://obmng.dbm.guestline.net/api/roomRates/OBMNG/${hotel.id}`)
       .then(function (response) {
-        setRooms(response.data);
+        setRooms(response.data.rooms);
+        console.log(response.data.rooms);
       })
       .catch(function (error) {
         setError(true);
       });
   }, [hotel.id]);
+
+  useEffect(() => {
+    setRoomsFiltered(rooms);
+  }, [setRooms, rooms]);
+
+  useEffect(() => {
+    const actualRooms = rooms;
+    const filteredRooms = actualRooms.filter(
+      (r: RoomType) =>
+        children <= r.occupancy.maxChildren && adults <= r.occupancy.maxAdults
+    );
+    setRoomsFiltered(filteredRooms);
+  }, [children, adults, rooms]);
 
   return (
     <>
@@ -72,7 +88,7 @@ const Hotel = ({
         <div className="hotel__rooms">
           {error && <p>We can not load rooms</p>}
           {!error &&
-            rooms.rooms.map((room: RoomType, index) => (
+            roomsFiltered.map((room: RoomType, index) => (
               <Room
                 key={`${index}-room`}
                 room={room}
