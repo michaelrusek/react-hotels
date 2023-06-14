@@ -26,7 +26,6 @@ const Hotel = ({
   const [rooms, setRooms] = useState([]);
   const [roomsFiltered, setRoomsFiltered] = useState([]);
   const [error, setError] = useState<boolean>(false);
-  const [noRooms, setNoRooms] = useState<boolean>(false);
 
   useEffect(() => {
     axios
